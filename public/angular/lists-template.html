@@ -1,0 +1,23 @@
+<div ncy-breadcrumb></div>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            <div ng-form name="addFavouriteForm">
+                <input type="text" name="addFavouriteInput" ng-model="name" placeholder="Name of a new list" required/>
+                <span ng-disabled="addFavouriteForm.addFavouriteInput.$invalid" class="btn btn-default"
+                      ng-click="createList(name)">Create new list</span>
+            </div>
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="row in favouriteLists">
+        <td>{{row.name}}</td>
+        <td><span class="btn btn-default" ui-sref="movies({id: row.id})">Show movies</span></td>
+        <th><span class="btn btn-default" ng-click="removeList(row)">Remove</span></th>
+    </tr>
+    </tbody>
+</table>

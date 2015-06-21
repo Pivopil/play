@@ -1,0 +1,23 @@
+
+<div class="modal-header">
+    <h3 class="modal-title">Add movie</h3>
+</div>
+
+<div class="dialog">
+    <form>
+        <div class="form-group container">
+            <label>Favourite lists</label>
+
+            <select ng-model="value" ng-options="obj.name for obj in favouriteLists"></select>
+
+        </div>
+
+
+        <br/>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

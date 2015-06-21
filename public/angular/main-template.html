@@ -1,0 +1,37 @@
+<div ncy-breadcrumb></div>
+<input placeholder="Titanic" ng-model="searchText"/><span class="btn btn-default" ng-click="search()">Search</span>
+<table class="table" st-pipe="callServer" st-table="displayed">
+    <thead>
+    <tr>
+        <th>Poster</th>
+        <th>Overview</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody ng-show="!isLoading">
+    <tr ng-repeat="row in displayed">
+        <td><img style="width: 150px;"
+                 ng-src="{{ row.poster_path!== null ? 'http://image.tmdb.org/t/p/w300/' + row.poster_path : 'http://placehold.it/300x400'}}"/>
+        </td>
+        <td>
+            <p>{{row.title}}</p>
+
+            <p>Release date: {{row.release_date}}</p>
+
+            <div>{{row.overview}}</div>
+        </td>
+        <th><span class="btn btn-default" ng-click="save(row.id, row.title)">Add to favourites ...</span></th>
+    </tr>
+    </tbody>
+    <tbody ng-show="isLoading">
+    <tr>
+        <td colspan="4" class="text-center">Loading ...</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td class="text-center" st-pagination="" st-items-by-page="20" colspan="4">
+        </td>
+    </tr>
+    </tfoot>
+</table>

@@ -1,0 +1,20 @@
+<div ncy-breadcrumb></div>
+<table class="table">
+    <tr>
+        <td>
+            <img style="width: 300px;" ng-src="{{ row.poster_path !== null ? 'http://image.tmdb.org/t/p/w300' + movieDetails.poster_path : 'http://placehold.it/300x400'}}"/>
+        </td>
+        <td>
+            <h1>{{movieDetails.title}}</h1>
+
+            <p>{{movieDetails.tagline}}</p>
+
+            <p>Time: {{movieDetails.runtime}}</p>
+
+            <p>Release date: {{movieDetails.release_date}}</p>
+
+            <p>Overview: {{movieDetails.overview}}</p>
+
+            <p>Original language: {{movieDetails.original_language}}</p></td>
+    </tr>
+</table>

@@ -1,0 +1,18 @@
+<div ncy-breadcrumb></div>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="row in movies">
+        <td>{{row.name}}</td>
+        <td><span class="btn btn-default" ui-sref="movie({id: row.id, themoviedbId: row.themoviedbId})">Details</span>
+        </td>
+        <th><span class="btn btn-default" ng-click="removeMovie(row)">Remove</span></th>
+    </tr>
+    </tbody>
+</table>

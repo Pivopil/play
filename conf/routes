@@ -1,0 +1,29 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET           /                                  controllers.Application.index
+GET           /api                               controllers.Application.api
+
+# favourite
+GET           /api/list                          controllers.FavouriteController.list
+GET           /api/list/:id                      controllers.FavouriteController.get(id:Int)
+POST          /api/list                          controllers.FavouriteController.create
+PUT           /api/list/:id                      controllers.FavouriteController.update(id:Int)
+DELETE        /api/list/:id                      controllers.FavouriteController.delete(id:Int)
+
+# movie
+GET           /api/list/:listId/movie            controllers.MovieController.list(listId:Int)
+GET           /api/list/:listId/movie/:id        controllers.MovieController.get(id:Int, listId:Int)
+POST          /api/list/:listId/movie            controllers.MovieController.create(listId:Int)
+PUT           /api/list/:listId/movie/:id        controllers.MovieController.update(id:Int, listId:Int)
+DELETE        /api/list/:listId/movie/:id        controllers.MovieController.delete(id:Int, listId:Int)
+
+
+## Map static resources from the /public folder to the /assets URL path
+GET           /assets/*file                      controllers.Assets.at(path="/public", file)
+
+
+
+    
